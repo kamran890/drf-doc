@@ -5,3 +5,4 @@ Sphinx==4.1.1
 sphinx-rtd-theme==0.5.2
 mysqlclient==2.0.3
 django-environ==0.4.5
+django-docs==0.3.1

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import environ
+import os
 
 from pathlib import Path
 
@@ -33,6 +34,7 @@ DB_NAME = env('DB_NAME')
 DB_HOST = env('DB_HOST')
 DB_USERNAME = env('DB_USERNAME')
 DB_PASSWORD = env('DB_PASSWORD')
+PROJECT_PATH = env('PROJECT_PATH')
 
 ALLOWED_HOSTS = []
 
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'drf_yasg',
+    'docs',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +147,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+DOCS_ROOT = os.path.join(PROJECT_PATH, '../docs/_build/html')
