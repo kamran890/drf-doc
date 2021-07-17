@@ -35,8 +35,9 @@ DB_HOST = env('DB_HOST')
 DB_USERNAME = env('DB_USERNAME')
 DB_PASSWORD = env('DB_PASSWORD')
 PROJECT_PATH = env('PROJECT_PATH')
+BASE_URL = env('BASE_URL')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [BASE_URL]
 
 
 # Application definition
@@ -137,6 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_PATH, '../static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
